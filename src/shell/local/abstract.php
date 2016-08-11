@@ -1,7 +1,11 @@
 <?php
 
-require_once __DIR__ . DIRECTORY_SEPARATOR . '..'
-    . DIRECTORY_SEPARATOR . 'abstract.php';
+if(file_exists(__DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'abstract.php')) {
+    require_once __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'abstract.php';
+} else {
+    require_once 'shell' . DIRECTORY_SEPARATOR . 'abstract.php';
+}
+
 
 abstract class Local_Shell_Abstract extends Mage_Shell_Abstract
 {
